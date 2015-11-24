@@ -16,22 +16,24 @@
 <body>
   <div class="container" ng-controller='FccCtrl as ctrl'>
     <h5>FCC spectrum data: Search by band range</h5>
-    <input type="text" ng-model="ctrl.lower" placeholder="lower spectrum band"/>
-    <input type="text" ng-model="ctrl.upper" placeholder="upper spectrum band"/>
+    <label for="lower">Lower Band</label>
+    <input id="lower" type="text" ng-model="ctrl.lower" placeholder="min 225 max 3700"/>
+    <label for="upper">Upper Band</label>
+    <input id="upper" type="text" ng-model="ctrl.upper" placeholder="min 225 max 3700"/>
 
     <button ng-click="ctrl.getSpec()">Get Data</button>
 
 
     <ul>
       <li ng-repeat="band in ctrl.SpectrumBands">
-        Id: {{band.id}}<br>
+        <!-- Id: {{band.id}}<br> -->
         lowerband: {{band.lowerBand}}<br>
         upperband: {{band.upperBand}}<br>
         Description: {{band.bandDesc}}<br>
+        <hr>
       </li>
     </ul>
   </div>
-
 
   <div class="container" ng-controller='LicenseCtrl as ctrl'>
     <h5>Search by Common Name</h5>
@@ -39,7 +41,6 @@
       <input type="text" ng-model="ctrl.name" placeholder="enter name"/>
       <button ng-click="ctrl.getCommonName()">Get Names</button>
     </div>
-
     <p>
       {{ctrl.data}}
     </p>
@@ -51,8 +52,6 @@
         <tr>
           <td>
             Name
-
-
             <!-- <span ng-show="sortType == 'name' && sortReverse = !sortReverse" class="fa fa-caret-down"></span>
             <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span> -->
           </td>
@@ -62,7 +61,6 @@
               <span ng-show="sortType == 'license' && sortReverse" class="fa fa-caret-up"></span> -->
 
               License Count
-
             </a>
 
           </td>
