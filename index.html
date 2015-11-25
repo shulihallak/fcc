@@ -23,12 +23,13 @@
 
     <button ng-click="ctrl.getSpec()">Get Data</button>
 
+    <br>
 
     <ul>
       <li ng-repeat="band in ctrl.SpectrumBands">
         <!-- Id: {{band.id}}<br> -->
-        lowerband: {{band.lowerBand}}<br>
-        upperband: {{band.upperBand}}<br>
+        lowerband: {{band.lowerBand}} MHz<br>
+        upperband: {{band.upperBand}} MHz<br>
         Description: {{band.bandDesc}}<br>
         <hr>
       </li>

@@ -120,26 +120,26 @@ app.controller('MapCtrl', ['$http',
 ]);
 
 
-// app.controller('VisCtrl', ['$http',
-//   function($http) {
-//     var ctrl = this;
-//       $http.get('spectrumData.json')
-//       .success(
-//         function(data) {
-//           // ctrl.data = data;
-//
-//           console.log(data);
-//           console.log(ctrl.data);
-//         }
-//       );
-//   }
-// ]);
-//
-//
-// app.directive('barChart', function(){
-//   return {
-//     restrict: 'E',
-//     replace: true,
-//
-//   };
-// });
+app.controller('VisCtrl', ['$http',
+  function($http) {
+    var ctrl = this;
+      $http.get('spectrumData.json')
+      .success(
+        function(data) {
+          // ctrl.data = data;
+
+          console.log(data);
+          console.log(ctrl.data);
+        }
+      );
+  }
+]);
+
+
+app.directive('barChart', function(){
+  return {
+    restrict: 'E',
+    replace: true,
+
+  };
+});
